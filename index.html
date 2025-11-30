@@ -12,11 +12,14 @@
     <style>
         /* Cores e Fontes Personalizadas */
         body {
-            /* Fundo base levemente avermelhado/creme para combinar com os lírios */
-            background-color: #F9F1F0; 
+            background-color: #F5F5DC;
             
-            /* Gradiente de fundo suave para dar profundidade */
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            /* Fundo gerado anteriormente */
+            background-image: url('http://googleusercontent.com/image_generation_content/0'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             
             font-family: 'Playfair Display', serif;
             overflow-x: hidden;
@@ -27,7 +30,6 @@
             font-family: 'Great Vibes', cursive;
         }
 
-        /* Efeito de Fade-In para elementos ao rolar */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -39,23 +41,21 @@
             transform: translateY(0);
         }
 
-        /* Estilo dos cartões de foto */
         .photo-card {
             background: white;
             padding: 10px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             transform-style: preserve-3d;
             z-index: 10;
         }
 
-        /* Botão de voltar ao topo */
         #back-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
             display: none;
-            background-color: #990000; /* Vermelho mais escuro (Sangue/Lírio) */
+            background-color: #DC143C;
             color: white;
             border: none;
             border-radius: 50%;
@@ -75,10 +75,10 @@
                 opacity: 0;
             }
             10% {
-                opacity: 0.8;
+                opacity: 0.9;
             }
             100% {
-                transform: translateY(110vh) translateX(100px) rotate(180deg);
+                transform: translateY(110vh) translateX(50px) rotate(360deg);
                 opacity: 0;
             }
         }
@@ -91,7 +91,8 @@
             animation-name: fall;
             animation-timing-function: linear;
             animation-fill-mode: forwards;
-            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
+            /* Adiciona uma sombra suave para destacar a flor do fundo */
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
         }
         
         .main-content {
@@ -102,16 +103,13 @@
 </head>
 <body class="min-h-screen relative flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
 
-    <!-- Container Principal -->
-    <div class="main-content max-w-4xl w-full bg-white/80 backdrop-blur-md shadow-2xl rounded-xl p-8 md:p-12 border border-red-200 fade-in">
+    <div class="main-content max-w-4xl w-full bg-white/90 backdrop-blur-md shadow-2xl rounded-xl p-8 md:p-12 border border-red-100 fade-in">
         
-        <!-- Cabeçalho / Título -->
         <div class="text-center mb-12 fade-in">
-            <h1 class="font-handwriting text-5xl md:text-7xl text-red-800 mb-4 drop-shadow-sm">Meu Bem</h1>
-            <div class="w-24 h-1 bg-red-600 mx-auto rounded-full"></div>
+            <h1 class="font-handwriting text-5xl md:text-7xl text-red-700 mb-4 drop-shadow-sm">Meu Bem</h1>
+            <div class="w-24 h-1 bg-red-400 mx-auto rounded-full"></div>
         </div>
 
-        <!-- Mensagem -->
         <div class="text-center mb-16 space-y-4 fade-in">
             <p class="text-xl md:text-2xl text-gray-800 leading-relaxed font-light italic">
                 "Você é a coisa mais importante da minha vida, você é o único motivo que preciso pra ser feliz."
@@ -119,18 +117,17 @@
             <p class="text-xl md:text-2xl text-gray-800 leading-relaxed font-light italic">
                 "Serei pra sempre todo seu, e quero viver toda minha vida ao seu lado."
             </p>
-            <div class="text-3xl text-red-600 mt-4">♥</div>
+            <div class="text-3xl text-red-500 mt-4">♥</div>
         </div>
 
-        <!-- Galeria de Fotos -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <!-- Foto 1 -->
             <div class="photo-card fade-in rotate-[-2deg]">
                 <div class="aspect-[3/4] overflow-hidden rounded bg-gray-100 relative">
                     <img src="Imagem do WhatsApp de 2023-10-24 à(s) 15.47.33_63ae76dc.jpg" 
-                         alt="Nós dois - Momento Especial" 
+                         alt="Nós dois" 
                          class="w-full h-full object-cover"
-                         onerror="this.src='https://placehold.co/600x800/f3e8e8/990000?text=Foto+1'; this.style.objectFit='contain';">
+                         onerror="this.src='https://placehold.co/600x800/f3e8e8/a33333?text=Foto+1+Ausente'; this.style.objectFit='contain';">
                 </div>
             </div>
 
@@ -138,9 +135,9 @@
             <div class="photo-card fade-in rotate-[1deg] md:mt-8">
                 <div class="aspect-[3/4] overflow-hidden rounded bg-gray-100 relative">
                     <img src="IMG-20231122-WA0025.jpg" 
-                         alt="Nós dois - Sorrindo" 
+                         alt="Nós dois" 
                          class="w-full h-full object-cover"
-                         onerror="this.src='https://placehold.co/600x800/f3e8e8/990000?text=Foto+2'; this.style.objectFit='contain';">
+                         onerror="this.src='https://placehold.co/600x800/f3e8e8/a33333?text=Foto+2+Ausente'; this.style.objectFit='contain';">
                 </div>
             </div>
 
@@ -148,9 +145,9 @@
             <div class="photo-card fade-in rotate-[2deg]">
                 <div class="aspect-[3/4] overflow-hidden rounded bg-gray-100 relative">
                     <img src="IMG-20231121-WA0018.jpg" 
-                         alt="Nós dois - Passeio" 
+                         alt="Nós dois" 
                          class="w-full h-full object-cover"
-                         onerror="this.src='https://placehold.co/600x800/f3e8e8/990000?text=Foto+3'; this.style.objectFit='contain';">
+                         onerror="this.src='https://placehold.co/600x800/f3e8e8/a33333?text=Foto+3+Ausente'; this.style.objectFit='contain';">
                 </div>
             </div>
 
@@ -158,62 +155,44 @@
             <div class="photo-card fade-in rotate-[-1deg] md:mt-8">
                 <div class="aspect-[3/4] overflow-hidden rounded bg-gray-100 relative">
                     <img src="FORMATURA CCC PDM MAYRINK-91.jpg" 
-                         alt="Nós dois - Formatura" 
+                         alt="Nós dois" 
                          class="w-full h-full object-cover"
-                         onerror="this.src='https://placehold.co/600x800/f3e8e8/990000?text=Foto+4'; this.style.objectFit='contain';">
+                         onerror="this.src='https://placehold.co/600x800/f3e8e8/a33333?text=Foto+4+Ausente'; this.style.objectFit='contain';">
                 </div>
             </div>
         </div>
 
-        <!-- Rodapé -->
         <div class="text-center mt-12 text-gray-500 text-sm fade-in">
             <p>Feito com todo amor do mundo.</p>
         </div>
     </div>
 
-    <!-- Botão Voltar ao Topo -->
     <button id="back-to-top" title="Voltar ao topo">↑</button>
 
-    <!-- Scripts para Dinâmicas -->
     <script>
-        // --- SVG do Lírio-aranha Vermelho (Spider Lily) ---
-        // Criado inline para garantir que apareça sem precisar de imagem externa
-        const spiderLilySvg = `data:image/svg+xml;utf8,
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-            <!-- Estames longos e curvos característicos -->
-            <path d="M50 50 Q 10 10 10 30" stroke="%238B0000" stroke-width="1.5" fill="none"/>
-            <path d="M50 50 Q 90 10 90 30" stroke="%238B0000" stroke-width="1.5" fill="none"/>
-            <path d="M50 50 Q 50 5 50 15" stroke="%238B0000" stroke-width="1.5" fill="none"/>
-            <path d="M50 50 Q 5 50 20 50" stroke="%238B0000" stroke-width="1.5" fill="none"/>
-            <path d="M50 50 Q 95 50 80 50" stroke="%238B0000" stroke-width="1.5" fill="none"/>
-            <path d="M50 50 Q 20 90 30 70" stroke="%238B0000" stroke-width="1.5" fill="none"/>
-            <path d="M50 50 Q 80 90 70 70" stroke="%238B0000" stroke-width="1.5" fill="none"/>
-            
-            <!-- Pétalas onduladas -->
-            <path d="M50 50 Q 30 30 25 40 T 15 50" stroke="%23DC143C" stroke-width="3" fill="none" opacity="0.8"/>
-            <path d="M50 50 Q 70 30 75 40 T 85 50" stroke="%23DC143C" stroke-width="3" fill="none" opacity="0.8"/>
-            <path d="M50 50 Q 40 70 35 60 T 45 80" stroke="%23DC143C" stroke-width="3" fill="none" opacity="0.8"/>
-            <path d="M50 50 Q 60 70 65 60 T 55 80" stroke="%23DC143C" stroke-width="3" fill="none" opacity="0.8"/>
-            <path d="M50 50 Q 30 50 20 60" stroke="%23DC143C" stroke-width="3" fill="none" opacity="0.8"/>
-            <path d="M50 50 Q 70 50 80 60" stroke="%23DC143C" stroke-width="3" fill="none" opacity="0.8"/>
-            
-            <!-- Centro -->
-            <circle cx="50" cy="50" r="4" fill="%238B0000"/>
-        </svg>`;
-
-        // --- 1. Sistema de Chuva de Lírios ---
+        // --- 1. Sistema de Chuva de Flores (Atualizado) ---
         function createFallingFlower() {
             const flower = document.createElement('img');
-            flower.src = spiderLilySvg; // Usa o SVG criado acima
+            
+            // AQUI ESTÁ A MUDANÇA: O código agora procura por 'nova_flor.png'
+            flower.src = 'nova_flor.png'; 
+            
+            // Se você ainda não tiver salvado a 'nova_flor.png', ele usa a antiga como reserva
+            flower.onerror = function() {
+                this.src = 'image_2ab957.png'; // Fallback para a imagem antiga
+                // Se também não tiver a antiga, remove o elemento para não dar erro visual
+                this.onerror = function() { this.remove(); };
+            };
+
             flower.classList.add('falling-flower');
             
             const startLeft = Math.random() * 95; 
-            const duration = Math.random() * 8 + 6; // Um pouco mais lento para ser elegante
-            const size = Math.random() * 60 + 50; // Lírios maiores para ver os detalhes
+            const duration = Math.random() * 8 + 7; 
+            const size = Math.random() * 50 + 40; 
             
             flower.style.left = startLeft + 'vw';
             flower.style.width = size + 'px';
-            flower.style.opacity = Math.random() * 0.5 + 0.4;
+            flower.style.opacity = Math.random() * 0.4 + 0.6;
             flower.style.animationDuration = duration + 's';
             
             flower.addEventListener('animationend', () => {
@@ -223,12 +202,10 @@
             document.body.appendChild(flower);
         }
 
-        // Inicia o intervalo
-        setInterval(createFallingFlower, 600); // Frequência da chuva
+        setInterval(createFallingFlower, 500);
 
-        // Cria alguns iniciais para a tela não começar vazia
-        for(let i=0; i<8; i++) {
-            setTimeout(createFallingFlower, i * 400);
+        for(let i=0; i<10; i++) {
+            setTimeout(createFallingFlower, i * 300);
         }
 
         // --- 2. Efeito de Fade-In ao Rolar ---
@@ -259,7 +236,7 @@
                 const rotateX = -(mouseY / (cardRect.height / 2)) * 8;
 
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-                card.style.boxShadow = `${-rotateY}px ${rotateX}px 20px rgba(150, 0, 0, 0.2)`; // Sombra avermelhada
+                card.style.boxShadow = `${-rotateY}px ${rotateX}px 20px rgba(0,0,0,0.15)`;
             });
 
             card.addEventListener('mouseleave', () => {

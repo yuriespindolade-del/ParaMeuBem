@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Meu Amor</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fontes do Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Cores e Fontes Personalizadas */
+        body {
+            background-color: #F5F5DC; /* Cor de reserva */
+            
+            /* --- NOVA IMAGEM DE FUNDO (Gerada) --- */
+            background-image: url('http://googleusercontent.com/image_generation_content/0'); 
+            background-repeat: no-repeat;
+            background-size: cover; /* Cobre toda a tela */
+            background-position: center;
+            background-attachment: fixed; /* O fundo fica parado enquanto você rola */
+            
+            font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .font-handwriting {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        /* Efeito de Fade-In para elementos ao rolar */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilo dos cartões de foto */
+        .photo-card {
+            background: white;
+            padding: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            z-index: 10;
+        }
+
+        /* Botão de voltar ao topo */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #DC143C;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            z-index: 100;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Animação das Flores Caindo */
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(110vh) translateX(50px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .falling-flower {
+            position: fixed;
+            top: -100px;
+            z-index: 1; 
+            pointer-events: none;
+            animation-name: fall;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
+        }
+        
+        .main-content {
+            z-index: 20;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+
+    <!-- Container Principal com fundo branco translúcido para garantir a leitura sobre o fundo colorido -->
+    <div class="main-content max-w-4xl w-full bg-white/90 backdrop-blur-md shadow-2xl rounded-xl p-8 md:p-12 border border-red-100 fade-in">
+        
+        <!-- Cabeçalho / Título -->
+        <div class="text-center mb-12 fade-in">
+            <h1 class="font-handwriting text-5xl md:text-7xl text-red-700 mb-4 drop-shadow-sm">Meu Bem</h1>
+            <div class="w-24 h-1 bg-red-400 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Mensagem -->
+        <div class="text-center mb-16 space-y-4 fade-in">
+            <p class="text-xl md:text-2xl text-gray-800 leading-relaxed font-light italic">
+                "Você é a coisa mais importante da minha vida, você é o único motivo que preciso pra ser feliz."
+            </p>
+            <p class="text-xl md:text-2xl text-gray-800 leading-relaxed font-light italic">
+                "Serei pra sempre todo seu, e quero viver toda minha vida ao seu lado."
+            </p>
+            <div class="text-3xl text-red-500 mt-4">♥</div>
+        </div>
+
+        <!-- Galeria de Fotos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <!-- Foto 1 -->
+            <div class="photo-card fade-in rotate-[-2deg]">
+                <div class="aspect-[3/4] overflow-hidden rounded bg-gray-100 relative">
+                    <img src="Imagem do WhatsApp de 2023-10-24 à(s) 15.47.33_63ae76dc.jpg" 
+                         alt="Nós dois - Momento Especial" 
+                         class="w-full h-full object-cover"
+                         onerror="this.src='https://placehold.co/600x800/f3e8e8/a33333?text=Foto+1+Ausente'; this.style.objectFit='contain';">
+                </div>
+            </div>
+
+            <!-- Foto 2 -->
+            <div class="photo-card fade-in rotate-[1deg] md:mt-8">
+                <div class="aspect-[3/4] overflow-hidden rounded bg-gray-100 relative">
+                    <img src="IMG-20231122-WA0025.jpg" 
+                         alt="Nós dois - Sorrindo" 
+                         class="w-full h-full object-cover"
+                         onerror="this.src='https://placehold.co/600x800/f3e8e8/a33333?text=Foto+2+Ausente'; this.style.objectFit='contain';">
+                </div>
+            </div>
+
+            <!-- Foto 3 -->
+            <div class="photo-card fade-in rotate-[2deg]">
+                <div class="aspect-[3/4] overflow-hidden rounded bg-gray-100 relative">
+                    <img src="IMG-20231121-WA0018.jpg" 
+                         alt="Nós dois - Passeio" 
+                         class="w-full h-full object-cover"
+                         onerror="this.src='https://placehold.co/600x800/f3e8e8/a33333?text=Foto+3+Ausente'; this.style.objectFit='contain';">
+                </div>
+            </div>
+
+            <!-- Foto 4 -->
+            <div class="photo-card fade-in rotate-[-1deg] md:mt-8">
+                <div class="aspect-[3/4] overflow-hidden rounded bg-gray-100 relative">
+                    <img src="FORMATURA CCC PDM MAYRINK-91.jpg" 
+                         alt="Nós dois - Formatura" 
+                         class="w-full h-full object-cover"
+                         onerror="this.src='https://placehold.co/600x800/f3e8e8/a33333?text=Foto+4+Ausente'; this.style.objectFit='contain';">
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="text-center mt-12 text-gray-500 text-sm fade-in">
+            <p>Feito com todo amor do mundo.</p>
+        </div>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="back-to-top" title="Voltar ao topo">↑</button>
+
+    <!-- Scripts para Dinâmicas -->
+    <script>
+        // --- 1. Sistema de Chuva de Flores ---
+        function createFallingFlower() {
+            const flower = document.createElement('img');
+            // Continua usando o desenho PNG para as flores caindo, pois tem fundo transparente
+            flower.src = 'image_2ab957.png'; 
+            flower.classList.add('falling-flower');
+            
+            const startLeft = Math.random() * 95; 
+            const duration = Math.random() * 8 + 7; 
+            const size = Math.random() * 50 + 40; 
+            
+            flower.style.left = startLeft + 'vw';
+            flower.style.width = size + 'px';
+            flower.style.opacity = Math.random() * 0.4 + 0.6;
+            flower.style.animationDuration = duration + 's';
+            
+            flower.addEventListener('animationend', () => {
+                flower.remove();
+            });
+            
+            document.body.appendChild(flower);
+        }
+
+        setInterval(createFallingFlower, 500);
+
+        for(let i=0; i<10; i++) {
+            setTimeout(createFallingFlower, i * 300);
+        }
+
+        // --- 2. Efeito de Fade-In ao Rolar ---
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        fadeElements.forEach(element => appearOnScroll.observe(element));
+
+        // --- 3. Efeito 3D Dinâmico nos Cartões ---
+        const photoCards = document.querySelectorAll('.photo-card');
+        photoCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const cardRect = card.getBoundingClientRect();
+                const cardCenterX = cardRect.left + cardRect.width / 2;
+                const cardCenterY = cardRect.top + cardRect.height / 2;
+                const mouseX = e.clientX - cardCenterX;
+                const mouseY = e.clientY - cardCenterY;
+
+                const rotateY = (mouseX / (cardRect.width / 2)) * 8;
+                const rotateX = -(mouseY / (cardRect.height / 2)) * 8;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                card.style.boxShadow = `${-rotateY}px ${rotateX}px 20px rgba(0,0,0,0.15)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = ''; 
+                card.style.boxShadow = '';
+            });
+        });
+
+        // --- 4. Botão Voltar ao Topo ---
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+                setTimeout(() => { backToTopButton.style.opacity = '1'; }, 10);
+            } else {
+                backToTopButton.style.opacity = '0';
+                setTimeout(() => { backToTopButton.style.display = 'none'; }, 300);
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
